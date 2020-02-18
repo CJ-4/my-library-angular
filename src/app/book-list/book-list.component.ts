@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Book } from '../book';
 
 @Component({
   selector: 'app-book-list',
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookListComponent implements OnInit {
 
-  constructor() { }
+  @Input() books: Book[];
+  @Input() name: string;
 
-  ngOnInit() {
-  }
+newTitle: string;
+newAuthor: string;
+newYear: number;
+
+constructor() { 
+
+}
+
+ngOnInit() {
+}
+
+details(book: Book) {
+  alert(`details for ${book.title}`);
+}
+addBook() {
+  let book= new Book(this.newTitle, this.newAuthor, this.newYear)
+  this.books.push(book);
+}
 
 }

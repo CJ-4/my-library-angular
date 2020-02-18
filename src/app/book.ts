@@ -3,9 +3,9 @@ export class Book {
     author: string;
     year: number;
 
-    constructor(title: string, category: string, year: number) {
+    constructor(title: string, author: string, year: number) {
         this.title = title;
-        this.author = category;
+        this.author = author;
         this.year = year;
     }
 }
